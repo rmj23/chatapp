@@ -6,6 +6,10 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
+app.get('/', (req, res) => {
+  res.json("hi there");
+});
+
 io.on('connection', (socket) => {
   console.log('A user connected');
 
